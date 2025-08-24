@@ -1,0 +1,7 @@
+{
+  "name": "hokkaido2025",
+  "private": true,
+  "workspaces": [
+    "projects/*"
+  ]
+}
