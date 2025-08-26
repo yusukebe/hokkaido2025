@@ -1,0 +1,31 @@
+{
+  "name": "mcp-ui",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "$npm_execpath run build && vite preview",
+    "deploy": "$npm_execpath run build && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+  },
+  "dependencies": {
+    "@hono/mcp": "^0.1.1",
+    "@hono/react-renderer": "^1.0.1",
+    "@mcp-ui/client": "^5.9.0",
+    "@mcp-ui/server": "^5.10.0",
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "agents": "^0.0.113",
+    "hono": "^4.9.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "zod": "^4.1.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.2.3",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
+    "vite": "^6.3.5",
+    "vite-ssr-components": "^0.3.0",
+    "wrangler": "^4.17.0"
+  }
+}
