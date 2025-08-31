@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "lib": [
+      "ESNext"
+    ],
+  },
+  "include": [
+    "src/server/**/*.tsx",
+    "src/server/**/*.ts",
+    "src/data/**/*.ts",
+    "worker-configuration.d.ts"
+  ]
+}

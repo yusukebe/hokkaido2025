@@ -1,5 +1,5 @@
 {
-  "name": "mcp-ui",
+  "name": "ramen-mcp-ui",
   "type": "module",
   "scripts": {
     "dev": "vite",
