@@ -35,7 +35,7 @@ export const RestaurantDetail: React.FC<RestaurantDetailProps> = ({ shop, detail
     const message = {
       type: 'prompt',
       payload: {
-        prompt: `How do I go to ${detail.address}?`
+        prompt: `${detail.address}への行き方は?`
       }
     }
     postMessageToParent(message)
