@@ -10,6 +10,7 @@
     "src/server/**/*.tsx",
     "src/server/**/*.ts",
     "src/data/**/*.ts",
+    "src/components/**/*.tsx",
     "worker-configuration.d.ts"
   ]
 }

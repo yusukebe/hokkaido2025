@@ -1,3 +1,677 @@
+/* Global Styles - Force Dark Mode */
+:root {
+  --bg-primary: oklch(0.25 0.029 234.58);
+  --bg-secondary: oklch(0.25 0.029 234.58);
+  --bg-card: oklch(0.25 0.029 234.58);
+  --text-primary: #e0e0e0;
+  --text-secondary: #999;
+  --text-heading: #f0f0f0;
+  --text-subheading: #d0d0d0;
+  --border-primary: #404040;
+  --border-secondary: #555;
+  --accent-primary: #5dade2;
+  --accent-hover: #85c1e9;
+  --badge-bg: #2980b9;
+  --badge-text: #ffffff;
+  --star-color: #f1c40f;
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Container */
+.container {
+  max-width: 100%;
+  margin: 0;
+  padding: 10px;
+  background-color: var(--bg-secondary);
+}
+
+/* Header */
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--text-subheading);
+  margin: 15px 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Filter Section */
+.filter-section {
+  background: var(--bg-secondary);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: var(--text-heading);
+  font-size: 0.75rem;
+}
+
+.filter-select {
+  padding: 6px 10px;
+  border: 1px solid var(--border-secondary);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.filter-slider {
+  width: 120px;
+  cursor: pointer;
+  accent-color: var(--accent-primary);
+}
+
+/* Restaurant Grid */
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+/* Restaurant Card */
+.restaurant-card {
+  background: var(--bg-card);
+  border-radius: 6px;
+  padding: 8px;
+  box-shadow: 0 1px 4px var(--shadow-light);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid var(--border-primary);
+}
+
+.restaurant-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px var(--shadow-medium);
+  border-color: var(--accent-primary);
+}
+
+.restaurant-name {
+  margin: 0 0 6px 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.2;
+}
+
+.restaurant-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Taste Badge */
+.taste-badge {
+  display: inline-block;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  padding: 2px 6px;
+  border-radius: 8px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+/* Rating */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.stars {
+  color: var(--star-color);
+  font-size: 0.75rem;
+}
+
+.rating-number {
+  color: var(--text-secondary);
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 50px;
+  padding: 40px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+}
+
+/* Detail Page Styles */
+.detail-header {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.back-link {
+  color: var(--accent-primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: var(--accent-hover);
+}
+
+.shop-name {
+  margin: 8px 0;
+  color: var(--text-heading);
+  font-size: 1.6rem;
+}
+
+.shop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.label {
+  font-weight: 700;
+  color: var(--text-subheading);
+  min-width: 50px;
+  font-size: 0.8rem;
+}
+
+.address {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.directions-btn {
+  background: var(--accent-primary);
+  color: var(--badge-text);
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background-color 0.3s;
+}
+
+.directions-btn:hover {
+  background: var(--accent-hover);
+}
+
+/* Photos Section */
+.photos-section {
+  margin-top: 20px;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.photo-item {
+  background: var(--bg-card);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px var(--shadow-light);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-item:hover {
+  transform: scale(1.01);
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  display: block;
+  background: var(--bg-secondary);
+}
+
+.photo-info {
+  padding: 6px 8px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-primary);
+}
+
+.photo-info small {
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+}
+
+.no-photos {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 15px;
+  padding: 15px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design for iframe */
+/* Extra Extra Large iframe */
+@media (min-width: 1200px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+  }
+}
+
+/* Extra Large iframe */
+@media (max-width: 1199px) and (min-width: 900px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+  }
+}
+
+/* Large iframe */
+@media (max-width: 899px) and (min-width: 700px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+}
+
+/* Medium iframe */
+@media (max-width: 699px) and (min-width: 500px) {
+  .restaurant-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .restaurant-card {
+    padding: 6px;
+  }
+
+  .restaurant-name {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
+  }
+
+  .taste-badge {
+    font-size: 0.55rem;
+    padding: 1px 4px;
+  }
+
+  .stars {
+    font-size: 0.65rem;
+  }
+
+  .rating-number {
+    font-size: 0.55rem;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 8px;
+  }
+}
+
+/* Small iframe */
+@media (max-width: 499px) and (min-width: 350px) {
+  .container {
+    padding: 6px;
+  }
+
+  h1 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+  }
+
+  .restaurant-card {
+    padding: 5px;
+  }
+
+  .restaurant-name {
+    font-size: 0.7rem;
+    margin-bottom: 3px;
+  }
+
+  .taste-badge {
+    padding: 1px 3px;
+    font-size: 0.5rem;
+  }
+
+  .stars {
+    font-size: 0.6rem;
+  }
+
+  .rating-number {
+    font-size: 0.5rem;
+  }
+}
+
+/* Extra Small iframe */
+@media (max-width: 349px) {
+  .container {
+    padding: 4px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .filter-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 4px;
+  }
+
+  .restaurant-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .restaurant-card {
+    padding: 4px;
+  }
+
+  .restaurant-name {
+    font-size: 0.65rem;
+    margin-bottom: 2px;
+  }
+
+  .taste-badge {
+    padding: 1px 2px;
+    font-size: 0.45rem;
+  }
+
+  .stars {
+    font-size: 0.55rem;
+  }
+
+  .rating-number {
+    font-size: 0.45rem;
+  }
+}
+
+/* Detail Page Responsive */
+/* Extra Extra Large Detail */
+@media (min-width: 1200px) {
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 12px;
+  }
+}
+
+/* Large Detail */
+@media (max-width: 1199px) and (min-width: 800px) {
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .shop-name {
+    font-size: 1.4rem;
+  }
+}
+
+/* Medium Detail */
+@media (max-width: 799px) and (min-width: 500px) {
+  .shop-name {
+    font-size: 1.2rem;
+    margin: 6px 0;
+  }
+
+  .detail-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .shop-info {
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+  }
+
+  .photo-item img {
+    max-height: 200px;
+  }
+
+  .photo-info {
+    padding: 4px 6px;
+  }
+
+  .photo-info small {
+    font-size: 0.6rem;
+  }
+}
+
+/* Small Detail */
+@media (max-width: 499px) and (min-width: 350px) {
+  .shop-name {
+    font-size: 1rem;
+    margin: 4px 0;
+  }
+
+  .detail-header {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .back-link {
+    font-size: 0.7rem;
+    margin-bottom: 6px;
+  }
+
+  .shop-info {
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .info-item {
+    gap: 6px;
+  }
+
+  .label {
+    font-size: 0.7rem;
+    min-width: 40px;
+  }
+
+  .address {
+    font-size: 0.7rem;
+  }
+
+  .taste-badge {
+    font-size: 0.6rem;
+    padding: 2px 5px;
+  }
+
+  .stars {
+    font-size: 0.7rem;
+  }
+
+  .rating-number {
+    font-size: 0.6rem;
+  }
+
+  .photos-section {
+    margin-top: 15px;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin: 12px 0 8px 0;
+  }
+
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .photo-item img {
+    max-height: 150px;
+  }
+
+  .photo-info {
+    padding: 3px 4px;
+  }
+
+  .photo-info small {
+    font-size: 0.55rem;
+  }
+}
+
+/* Extra Small Detail */
+@media (max-width: 349px) {
+  .shop-name {
+    font-size: 0.9rem;
+    margin: 3px 0;
+  }
+
+  .detail-header {
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+  }
+
+  .back-link {
+    font-size: 0.65rem;
+    margin-bottom: 4px;
+  }
+
+  .shop-info {
+    gap: 3px;
+    margin-top: 6px;
+  }
+
+  .info-item {
+    gap: 4px;
+  }
+
+  .label {
+    font-size: 0.6rem;
+    min-width: 35px;
+  }
+
+  .address {
+    font-size: 0.6rem;
+  }
+
+  .taste-badge {
+    font-size: 0.5rem;
+    padding: 1px 3px;
+  }
+
+  .stars {
+    font-size: 0.6rem;
+  }
+
+  .rating-number {
+    font-size: 0.5rem;
+  }
+
+  .photos-section {
+    margin-top: 10px;
+  }
+
+  h2 {
+    font-size: 0.9rem;
+    margin: 8px 0 6px 0;
+  }
+
+  .photo-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .photo-item img {
+    max-height: 120px;
+  }
+
+  .photo-info {
+    padding: 2px 3px;
+  }
+
+  .photo-info small {
+    font-size: 0.5rem;
+  }
+
+  .no-photos {
+    font-size: 0.7rem;
+    margin-top: 8px;
+    padding: 8px;
+  }
 }
