@@ -66,6 +66,12 @@ export const index: { shops: Shop[] } = {
       name: 'らーめん まつや',
       taste: '煮干し',
       rate: 3
+    },
+    {
+      id: 'kifuu',
+      name: '札幌らーめん輝風',
+      taste: '味噌',
+      rate: 3
     }
   ]
 }
@@ -250,6 +256,18 @@ export const details: Record<string, Details> = {
         height: 600,
         authorId: 'yusukebe',
         url: 'https://ramen-api.dev/images/matsuya/matsuya-004.jpg'
+      }
+    ]
+  },
+  kifuu: {
+    address: '北海道札幌市中央区南5条西3-1 大松ビル 1F',
+    photos: [
+      {
+        name: 'kifuu-001.jpg',
+        width: 800,
+        height: 600,
+        authorId: 'yusukebe',
+        url: 'https://ramen-api.dev/images/kifuu/kifuu-001.jpg'
       }
     ]
   }

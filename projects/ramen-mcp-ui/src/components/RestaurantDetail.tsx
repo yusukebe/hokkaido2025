@@ -44,9 +44,6 @@ export const RestaurantDetail: React.FC<RestaurantDetailProps> = ({ shop, detail
   return (
     <div className="container">
       <div className="detail-header">
-        <a href="/restaurants" className="back-link">
-          ← 一覧に戻る
-        </a>
         <h1 className="shop-name">{shop.name}</h1>
 
         <div className="shop-info">
@@ -74,7 +71,6 @@ export const RestaurantDetail: React.FC<RestaurantDetailProps> = ({ shop, detail
       </div>
 
       <div className="photos-section">
-        <h2>写真</h2>
         <div className="photo-gallery">
           {detail.photos.map((photo, index) => (
             <div key={index} className="photo-item">
