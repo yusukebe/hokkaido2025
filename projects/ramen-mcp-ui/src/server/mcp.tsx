@@ -42,7 +42,7 @@ export class MyMCP extends McpAgent {
 
     this.server.tool(
       'show_ramen_restaurants_with_ui',
-      'Displays a UI for my favorite ramen restaurants. Use get_my_favorite_ramen_restaurants unless asked to SHOW the ramen restaurants',
+      'Displays a UI for my favorite ramen restaurants. Use get_ramen_restaurants unless asked to SHOW the ramen restaurants',
       {
         minRate: z.number().default(0),
         taste: z.string().default('all')
