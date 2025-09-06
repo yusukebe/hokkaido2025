@@ -10,7 +10,7 @@ export class MyMCP extends McpAgent {
     version: '0.0.1'
   })
   async init() {
-    this.server.tool('get_ramen_restaurant', 'Return my favorite ramen restaurant', {}, async ({}) => {
+    this.server.tool('get_ramen_restaurants', 'Get my favorite ramen restaurants', {}, async ({}) => {
       return {
         content: [
           {
@@ -23,7 +23,7 @@ export class MyMCP extends McpAgent {
 
     this.server.tool(
       'get_ramen_restaurant_details',
-      'Details of the ramen restaurant',
+      'Get the details of the ramen restaurant',
       {
         restaurantName: z.string()
       },
